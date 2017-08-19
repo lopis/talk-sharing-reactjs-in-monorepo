@@ -1,0 +1,79 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #222;
+$headingColor: #222;
+
+$mainFontSize: 42px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #178CD3;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	background-color: #178CD3;
+	display: inline-block;
+	padding: 0.5vh 2vh;
+	box-sizing: border-box;
+	display: flex;
+	font-size: 0.4em;
+	> .handle {
+		text-align: right;
+		color: white;
+		margin-left: 2em;
+		line-height: 2em;
+	}
+	> .logo {
+		text-align: left;
+		flex-grow: 1;
+		height: 2em;
+		padding: 0.5vh;
+		box-sizing: border-box;
+		svg {
+			height: 100%;
+			width: auto;
+		}
+	}
+}
