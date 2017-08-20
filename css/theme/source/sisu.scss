@@ -55,6 +55,18 @@ section.has-dark-background {
 	background: white;
 	height: 5px;
 }
+.reveal ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 5vh;
+}
+.reveal ul li {
+  list-style: none;
+  min-width: 50%;
+  padding: 2vh 0;
+  text-align: center;
+}
 .reveal footer {
 	position: fixed;
 	bottom: 0;

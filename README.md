@@ -1,6 +1,7 @@
 # Sharing ReactJs Code in a Monorepo
 
 This presentation was powered by [reveal-js](https://github.com/hakimel/reveal.js#online-editor).
+[Read it live here](https://lopis.github.io/talk-sharing-reactjs-in-monorepo/)
 
 ## Running
 
