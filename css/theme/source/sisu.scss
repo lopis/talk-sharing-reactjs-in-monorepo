@@ -48,6 +48,13 @@ section.has-dark-background {
 @import "../template/theme";
 // ---------------------------------------------
 
+.reveal .controls {
+	top: 0
+}
+.reveal .progress {
+	background: white;
+	height: 5px;
+}
 .reveal footer {
 	position: fixed;
 	bottom: 0;
