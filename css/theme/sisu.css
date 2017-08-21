@@ -310,6 +310,10 @@ body {
   padding: 2vh 0;
   text-align: center; }
 
+.reveal section img {
+  border: none;
+  box-shadow: none; }
+
 .reveal footer {
   position: fixed;
   bottom: 0;
@@ -320,12 +324,15 @@ body {
   padding: 0.5vh 2vh;
   box-sizing: border-box;
   display: flex;
-  font-size: 0.4em; }
+  align-items: center;
+  font-size: 0.6em; }
   .reveal footer > span {
     text-align: right;
     color: white;
-    margin-left: 2em;
     line-height: 2em; }
+  .reveal footer > img {
+    height: 1em;
+    margin: 0 1em; }
   .reveal footer > .title {
     flex-grow: 1;
     text-align: center; }
@@ -353,6 +360,32 @@ body {
 .reveal section img.box {
   padding: 0;
   border: none;
-  height: 22vw; }
+  max-height: 22vw;
+  max-width: 60vw; }
   .reveal section img.box.big {
     height: 30vw; }
+
+.reveal section .twitter-box {
+  height: 22vh;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  padding: 0;
+  max-width: 60vw;
+  margin: 10vh auto;
+  align-items: center;
+  border-bottom-left-radius: 22vh 22vh;
+  border-top-left-radius: 22vh 22vh;
+  border-bottom-left-radius: 22vh 22vh;
+  border-top-left-radius: 22vh 22vh;
+  overflow: hidden; }
+  .reveal section .twitter-box .twitter-pic {
+    transform: scaleX(-1);
+    height: 100%;
+    max-height: none;
+    width: auto; }
+  .reveal section .twitter-box .bio {
+    flex-grow: 1;
+    padding: 0 5vw;
+    text-align: right; }
+    .reveal section .twitter-box .bio img {
+      margin-bottom: 0; }
