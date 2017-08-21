@@ -24,7 +24,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section ddata-transition="fade" data-transition-speed="fast">
+				<section ddata-transition="slide" data-transition-speed="fast">
 					<h1>Sharing React JS code</h1>
 					<h2>in a monorepo project</h2>
 				</section>
@@ -42,8 +42,8 @@
 				<section data-transition="fade" data-transition-speed="fast">
 					<h2>Monorepo? What is that? Why would you do that?</h2>
 					<ul>
-						<li>1 repository for all apps</li>
-						<li>sychronized</li>
+						<li style="width: 100%">1 repository for all apps</li>
+						<li>always sychronized</li>
 						<li>single review point</li>
 						<li>cheaper refactoring</li>
 						<li>frictionless modularity</li>
@@ -51,18 +51,63 @@
 				</section>
 				<section data-transition="fade" data-transition-speed="fast">
 					<h2>Our case. Sisu's stack</h2>
+					<div class="box">
+						<div class="title">MVC Apps</div>
+						<img src="static/symfony.png" alt="symfony">
+						<img src="static/twig.png" alt="twig">
+						<img src="static/silex.png" alt="twig">
+					</div>
+					<div class="box">
+						<div class="title">APIs</div>
+						<img src="static/php.png" alt="php">
+						<img src="static/go.png" alt="go">
+					</div>
+					<div class="box">
+						<div class="title">Microservices</div>
+						<img src="static/python.png" alt="python">
+						<img src="static/php.png" alt="php">
+						<img src="static/go.png" alt="go">
+					</div>
+					<br>
+					<div class="box">
+						<div class="title">Misc Tools</div>
+						<img src="static/python.png" alt="python">
+						<img src="static/php.png" alt="php">
+						<img src="static/bash.png" alt="bash">
+					</div>
+					<div class="box">
+						<div class="title">Frontend Apps</div>
+						<img src="static/angular.svg" alt="angular">
+						<img src="static/react.svg" alt="react">
+					</div>
 				</section>
 				<section data-transition="fade" data-transition-speed="fast">
 					<h2>The case for splitting frontend apps</h2>
+					<ul>
+						<li>Multiple single page applications</li>
+						<li>Distinct target audiences</li>
+						<li>Better modularity</li>
+						<li>Better use of developers' time</li>
+					</ul>
 				</section>
 				<section data-transition="fade" data-transition-speed="fast">
 					<h2>Advantages of sharing frontend code</h2>
+					<img class="box" src="static/buttons.png">
+					<img class="box" src="static/colors.png">
+					<img class="box" src="static/radio.png">
 				</section>
 				<section data-transition="fade" data-transition-speed="fast">
 					<h2>Which code to share</h2>
+					<ul>
+						<li>inputs controllers, style and effects</li>
+						<li>buttons, cards, text styles</li>
+						<li>layouts, page structure</li>
+						<li>images, fonts, translations</li>
+					</ul>
 				</section>
 				<section data-transition="fade" data-transition-speed="fast">
 					<h2>The problem</h2>
+					<img class="box big" src="static/long.jpg">
 				</section>
 				<section data-transition="fade" data-transition-speed="fast">
 					<h2>Strategy 1: use symbolic links</h2>
@@ -82,6 +127,7 @@
 				<div class="logo">
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="239.82777108099953 193.6518469365185 83.83938810207201 97.34571997345722" fill="#fff"><defs><path d="M309.41 263.53C311.79 259.94 313.89 256.26 315.68 252.38C316.57 250.59 317.27 248.79 317.97 247C316.92 247 311.68 247 302.24 247C306.54 256.92 308.93 262.42 309.41 263.53Z" id="b2fOlcHvQn"/><path d="M323.24 200.42C322.58 200.06 322.22 199.86 322.15 199.82C321.65 199.62 309.21 193.65 281.83 193.65C281.82 193.65 281.75 193.65 281.74 193.65C254.36 193.65 241.92 199.52 241.42 199.82C241.34 199.86 240.95 200.06 240.23 200.42C240.17 201.2 240.14 201.63 240.13 201.71C240.13 202.31 239.33 217.34 240.33 224.61C240.34 224.74 240.42 225.77 240.43 225.9C241.03 230.68 242.22 240.53 247.69 252.38C254.46 267.01 265.51 279.75 280.34 290.1C280.43 290.16 280.86 290.46 281.64 291C282.41 290.46 282.84 290.16 282.93 290.1C290.49 284.83 297.06 278.95 302.64 272.48C302.02 271.06 298.93 263.96 293.38 251.18L281.83 262.33L281.74 207.79C303.95 230 316.29 242.34 318.76 244.81C321.65 236.45 322.54 229.58 323.04 225.9C323.06 225.77 323.22 224.74 323.24 224.61C324.14 217.34 323.34 202.31 323.34 201.71C323.33 201.54 323.29 201.11 323.24 200.42Z" id="dAoIivz3V"/></defs><g><g><g><use xlink:href="#b2fOlcHvQn" opacity="1" fill="#fff" fill-opacity="1"/><g><use xlink:href="#b2fOlcHvQn" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"/></g></g><g><use xlink:href="#dAoIivz3V" opacity="1" fill="#fff" fill-opacity="1"/><g><use xlink:href="#dAoIivz3V" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"/></g></g></g></g></svg>
 				</div>
+				<span class="title">Sharing React JS code in a monorepo project</span>
 				<span class="handle">@simplesurance</span>
 				<span class="handle">@mrLopis</span>
 			</footer>

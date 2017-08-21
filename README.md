@@ -29,7 +29,7 @@ At simplesurance, we have different kinds of app co-existing in our monorepo. We
 
 **3. The case for splitting frontend apps**
 
-When we initially started to port parts of our frontend to ReactJS, we saw that as an opportunity to have separate self-contained single-page. From an UX prespective, our single-page applications provide a much better user experience by keeping the user more focused and informed about the state of the whole process of purchase or claim. On the developer side, we have modular apps that have a clear purpose and specific target actors with different needs. It also favours developers working in parallel on different modules.
+When we initially started to port parts of our frontend to ReactJS, we saw that as an opportunity to have separate self-contained single-page. From an UX prespective, our single-page applications provides a much better user experience by keeping the user more focused and informed about the state of the whole process of purchase or claim. On the developer side, we have modular apps that have a clear purpose and specific target actors with different needs. It also favours developers working in parallel on different modules.
 
 **4. Advantages of sharing frontend code**
 

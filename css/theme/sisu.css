@@ -321,17 +321,38 @@ body {
   box-sizing: border-box;
   display: flex;
   font-size: 0.4em; }
-  .reveal footer > .handle {
+  .reveal footer > span {
     text-align: right;
     color: white;
     margin-left: 2em;
     line-height: 2em; }
+  .reveal footer > .title {
+    flex-grow: 1;
+    text-align: center; }
   .reveal footer > .logo {
     text-align: left;
-    flex-grow: 1;
     height: 2em;
     padding: 0.5vh;
     box-sizing: border-box; }
     .reveal footer > .logo svg {
       height: 100%;
       width: auto; }
+
+.reveal section .box {
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 3vh;
+  margin: 2vh; }
+  .reveal section .box .title {
+    margin-bottom: 2vh; }
+  .reveal section .box img {
+    border: none;
+    box-shadow: none;
+    height: 8vh; }
+
+.reveal section img.box {
+  padding: 0;
+  border: none;
+  height: 22vw; }
+  .reveal section img.box.big {
+    height: 30vw; }
