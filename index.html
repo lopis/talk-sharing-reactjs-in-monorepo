@@ -1,177 +1,291 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+  <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sisu.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/sisu.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section ddata-transition="slide" data-transition-speed="fast">
-					<h1>Sharing React JS code</h1>
-					<h2>in a monorepo project</h2>
-					<div class="twitter-box">
-						<img class="twitter-pic" src="static/joao.jpg">
-						<div class="bio">
-							<div class="name">João Lopes</div>
-							<div class="job">Software Developer</div>
-							<img src="static/logo.png">
-						</div>
-					</div>
-				</section>
-				<!-- <section>
-					<p class="fragment grow">grow</p>
-					<p class="fragment shrink">shrink</p>
-					<p class="fragment fade-out">fade-out</p>
-					<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-					<p class="fragment current-visible">visible only once</p>
-					<p class="fragment highlight-current-blue">blue only once</p>
-					<p class="fragment highlight-red">highlight-red</p>
-					<p class="fragment highlight-green">highlight-green</p>
-					<p class="fragment highlight-blue">highlight-blue</p>
-				</section> -->
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>Monorepo? What is that? Why would you do that?</h2>
-					<ul>
-						<li style="width: 100%">1 repository for all apps</li>
-						<li>always sychronized</li>
-						<li>single review point</li>
-						<li>cheaper refactoring</li>
-						<li>frictionless modularity</li>
-					</ul>
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>Our case. Sisu's stack</h2>
-					<div class="box">
-						<div class="title">MVC Apps</div>
-						<img src="static/symfony.png" alt="symfony">
-						<img src="static/twig.png" alt="twig">
-						<img src="static/silex.png" alt="twig">
-					</div>
-					<div class="box">
-						<div class="title">APIs</div>
-						<img src="static/php.png" alt="php">
-						<img src="static/go.png" alt="go">
-					</div>
-					<div class="box">
-						<div class="title">Microservices</div>
-						<img src="static/python.png" alt="python">
-						<img src="static/php.png" alt="php">
-						<img src="static/go.png" alt="go">
-					</div>
-					<br>
-					<div class="box">
-						<div class="title">Misc Tools</div>
-						<img src="static/python.png" alt="python">
-						<img src="static/php.png" alt="php">
-						<img src="static/bash.png" alt="bash">
-					</div>
-					<div class="box">
-						<div class="title">Frontend Apps</div>
-						<img src="static/angular.svg" alt="angular">
-						<img src="static/react.svg" alt="react">
-					</div>
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>The case for splitting frontend apps</h2>
-					<ul>
-						<li>Multiple single page applications</li>
-						<li>Distinct target audiences</li>
-						<li>Better modularity</li>
-						<li>Better use of developers' time</li>
-					</ul>
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>Advantages of sharing frontend code</h2>
-					<img class="box" src="static/buttons.png">
-					<img class="box" src="static/colors.png">
-					<img class="box" src="static/radio.png">
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>Which code to share</h2>
-					<ul>
-						<li>inputs controllers, style and effects</li>
-						<li>buttons, cards, text styles</li>
-						<li>layouts, page structure</li>
-						<li>images, fonts, translations</li>
-					</ul>
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>The problem</h2>
-					<img class="box big" src="static/long.jpg">
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>Strategy 1: use symbolic links</h2>
-					<img class="box big" src="static/error.png">
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>Strategy 2: why not a private npm package?</h2>
-					<img class="box big" style="height: 9vw; margin-top: 5vh;" src="static/npm.svg">
-					<ul style="margin-top: 2vh;">
-						<li style="width: 100%">
-							Less flexibility
-						</li>
-						<li style="width: 100%">
-							Less development agility
-						</li>
-						<li style="width: 100%">
-							Defeats purpose of monorepo
-						</li>
-					</ul>
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>Strategy 3: webpack aliases</h2>
-				</section>
-				<section data-transition="fade" data-transition-speed="fast">
-					<h2>Strategy 4: pre-built "package" and webpack aliases</h2>
-				</section>
-			</div>
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section ddata-transition="slide" data-transition-speed="fast">
+        <h1>Sharing React JS code</h1>
+        <h2>in a monorepo project</h2>
+        <div class="twitter-box">
+          <img class="twitter-pic" src="static/joao.jpg">
+          <div class="bio">
+            <div class="name">João Lopes</div>
+            <div class="job">Software Developer</div>
+            <img src="static/logo.png">
+          </div>
+        </div>
+      </section>
+      <!-- <section>
+      <p class="fragment grow">grow</p>
+      <p class="fragment shrink">shrink</p>
+      <p class="fragment fade-out">fade-out</p>
+      <p class="fragment fade-up">fade-up (also down, left and right!)</p>
+      <p class="fragment current-visible">visible only once</p>
+      <p class="fragment highlight-current-blue">blue only once</p>
+      <p class="fragment highlight-red">highlight-red</p>
+      <p class="fragment highlight-green">highlight-green</p>
+      <p class="fragment highlight-blue">highlight-blue</p>
+    </section> -->
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Monorepo? What is that? Why would you do that?</h2>
+      <ul>
+        <li style="width: 100%">1 repository for all apps</li>
+        <li>always sychronized</li>
+        <li>single review point</li>
+        <li>cheaper refactoring</li>
+        <li>frictionless modularity</li>
+      </ul>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Our case. Sisu's stack</h2>
+      <div class="box">
+        <div class="title">MVC Apps</div>
+        <img src="static/symfony.png" alt="symfony">
+        <img src="static/twig.png" alt="twig">
+        <img src="static/silex.png" alt="twig">
+      </div>
+      <div class="box">
+        <div class="title">APIs</div>
+        <img src="static/php.png" alt="php">
+        <img src="static/go.png" alt="go">
+      </div>
+      <div class="box">
+        <div class="title">Microservices</div>
+        <img src="static/python.png" alt="python">
+        <img src="static/php.png" alt="php">
+        <img src="static/go.png" alt="go">
+      </div>
+      <br>
+      <div class="box">
+        <div class="title">Misc Tools</div>
+        <img src="static/python.png" alt="python">
+        <img src="static/php.png" alt="php">
+        <img src="static/bash.png" alt="bash">
+      </div>
+      <div class="box">
+        <div class="title">Frontend Apps</div>
+        <img src="static/angular.svg" alt="angular">
+        <img src="static/react.svg" alt="react">
+      </div>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>The case for splitting frontend apps</h2>
+      <ul>
+        <li>Multiple single page applications</li>
+        <li>Distinct target audiences</li>
+        <li>Better modularity</li>
+        <li>Better use of developers' time</li>
+      </ul>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Advantages of sharing frontend code</h2>
+      <img class="box" src="static/buttons.png">
+      <img class="box" src="static/colors.png">
+      <img class="box" src="static/radio.png">
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Which code to share</h2>
+      <ul>
+        <li>inputs controllers, style and effects</li>
+        <li>buttons, cards, text styles</li>
+        <li>layouts, page structure</li>
+        <li>images, fonts, translations</li>
+      </ul>
+    </section>
 
-			<footer>
-				<div class="logo">
-					<img src="static/sisu.svg">
-				</div>
-				<span class="title">Sharing React JS code in a monorepo project</span>
-				<span class="handle">@simplesurance</span>
-				<img src="static/twitter.png">
-				<span class="handle">@mrLopis</span>
-			</footer>
-		</div>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>How we put it together</h2>
+      <ul>
+        <li>
+          <pre><code data-trim>
+              ui
+              ├─app1
+              ╎  └─...
+              ├─app2
+              ╎  └─src
+              ╎    └─components
+              ╎      ├─navigation
+              ╎      ├─forms
+              ╎      └─...
+              └─components
+                ├─index.js
+                └─src
+                  ├─common
+                  ╎  ├─Button
+                  ╎  ├─Panel
+                  ╎  └─...
+                  ├─config
+                  ├─colors
+                  ├─icons
+                  └─...
+          </code></pre>
+        </li>
+        <li>
+          <p>
+            <span class="code">ui</span> contains all apps and the shared <span class="code">components</span> directory.
+          </p>
+          <p>
+            <span class="code">components</span> contains all the shared code neatly organized
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>The problem</h2>
+      <img class="box big" src="static/long.jpg">
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>How we put it together</h2>
+      <ul>
+        <li>
+          <pre><code data-trim>
+              ui
+              ├─app1
+              ╎  └─...
+              ├─app2
+              ╎  └─src
+              ╎    └─components
+              ╎      ├─navigation
+              ╎      ├─forms
+              ╎      └─...
+              └─components
+                ├─index.js
+                └─src
+                  ├─inputs <--
+                  ├─common
+                  ╎  ├─Button
+                  ╎  ├─Panel
+                  ╎  └─...
+                  ├─config
+                  ├─colors
+                  ├─icons
+                  └─...
+          </code></pre>
+        </li>
+        <li style="text-align: left">
+          <p>
+            <span class="code">ui</span> contains all apps and the shared <span class="code">components</span> directory.
+          </p>
+          <p>
+            <span class="code">components</span> contains all the shared code neatly organized
+          </p>
+          <p>
+            <span class="code">index.js</span> exports everything in a flat object
+          </p>
+          <p>
+            <pre><code data-trim>
+              export * from "./common"
+              export * from "./config/colors"
+              export * from "./config/dimensions"
+              export * from "./config/icons"
+              export * from "./inputs"
+              ...
+            </code></pre>
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Strategy 1: use symbolic links</h2>
+      <p>
+        Quick and dirty
+      </p>
+      <p class="fragment fade-up">
+        <img class="box big" src="static/error.png">
+      </p>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Strategy 2: why not a private npm package?</h2>
+      <img class="box big" style="height: 9vw; margin-top: 5vh;" src="static/npm.svg">
+      <ul style="margin-top: 2vh;">
+        <li style="width: 100vh">
+          Less flexibility
+        </li>
+        <li style="width: 100%">
+          Less development agility
+        </li>
+        <li style="width: 100%">
+          Defeats purpose of monorepo
+        </li>
+      </ul>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Strategy 3: webpack aliases</h2>
+      <br>
+      <pre><code data-trim>
+        resolve: {
+          alias: {
+            components: path.resolve(__dirname, '../components')
+          }
+        }
+      </code></pre>
+      <br>
+      <pre><code data-trim>
+        import SiteHeader from 'components'
+      </code></pre>
+      <p class="fragment fade-up">
+        <img class="box big" src="static/error.png">
+      </p>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Strategy 3a: pre-built "package" and webpack aliases</h2>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Final Notes</h2>
+    </section>
+  </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+  <footer>
+    <div class="logo">
+      <img src="static/sisu.svg">
+    </div>
+    <span class="title">Sharing React JS code in a monorepo project</span>
+    <span class="handle">@simplesurance</span>
+    <img src="static/twitter.png">
+    <span class="handle">@mrLopis</span>
+  </footer>
+</div>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				width: "100%",
-				height: "100%",
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+// More info about config & dependencies:
+// - https://github.com/hakimel/reveal.js#configuration
+// - https://github.com/hakimel/reveal.js#dependencies
+Reveal.initialize({
+  width: "100%",
+  height: "100%",
+  history: true,
+  controls: false,
+  dependencies: [
+    { src: 'plugin/markdown/marked.js' },
+    { src: 'plugin/markdown/markdown.js' },
+    { src: 'plugin/notes/notes.js', async: true },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+  ]
+});
+</script>
+</body>
 </html>

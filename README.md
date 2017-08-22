@@ -47,8 +47,9 @@ Say we had a component in `our-app/src/components/page/view.js` that needed to i
 
 **6. Strategy 1: use symbolic links**
 
-The first idea before we even started was that we could use symbolic links. With symbolic links, we could fool the app into thinking the share code was part of its code base and everything would be very zen and work.
-Unfortunately, webpack saw through our plans and resolved the symbolic links. So the `import` paths did not work as expected because the components were not defined in the correct location.
+The first idea before we even started the implementation was that we could use symbolic links. Quick and dirty.
+We could fool the app into thinking the share code was part of its source and everything would be very zen and just work.
+Unfortunately, webpack saw through our plans. Apparently webpack resolved the symbolic links. So een thought the build was successful, the `import` paths did not work as expected because the components could not be found in the location of the link, but in their real path.
 
 **7. Strategy 2: why not a private npm package?**
 
@@ -98,7 +99,7 @@ rules: [{
 }]
 ```
 
-Or at least we thought this was the final step. Because webpack cannot find babel or any other node modules from within the shared directory. The solution was to, ironically, making it a node package. We ran `npm init` and gave it some minimum settings and all the dependencies it needed. We just had to make sure that when we build our app we also build the shared code.
+Or at least we thought this was the final step. Remember our error from the quick and dirty symbolic link patch? Well, now, webpack can find our files and the classes in them, but it cannot find any other node modules on which our components depend, like glamor for css, the date picker, and so on. The solution was to, ironically, turn it into a node package. Kind of. We ran `npm init` and gave it some minimum settings and all the dependencies it needed. We just had to make sure that when we build our app we also build the shared code.
 
 **10. Final notes**
 
