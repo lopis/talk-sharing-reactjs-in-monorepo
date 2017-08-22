@@ -105,12 +105,14 @@
       <img class="box" src="static/radio.png">
     </section>
     <section data-transition="fade" data-transition-speed="fast">
-      <h2>Which code to share</h2>
+      <h2>What code to share</h2>
       <ul>
-        <li>inputs controllers, style and effects</li>
-        <li>buttons, cards, text styles</li>
+        <li style="flex-basis: 100%">reusable, encapsulated bits of code</li>
+        <li>inputs controllers</li>
+        <li>buttons, cards, headings</li>
+        <li>styles and effects</li>
         <li>layouts, page structure</li>
-        <li>images, fonts, translations</li>
+        <li style="flex-basis: 100%">images, fonts, translations or other assets</li>
       </ul>
     </section>
 
@@ -141,7 +143,7 @@
                   └─...
           </code></pre>
         </li>
-        <li>
+        <li style="text-align: left">
           <p>
             <span class="code">ui</span> contains all apps and the shared <span class="code">components</span> directory.
           </p>
@@ -232,27 +234,69 @@
     </section>
     <section data-transition="fade" data-transition-speed="fast">
       <h2>Strategy 3: webpack aliases</h2>
-      <br>
-      <pre><code data-trim>
-        resolve: {
-          alias: {
-            components: path.resolve(__dirname, '../components')
-          }
-        }
-      </code></pre>
-      <br>
-      <pre><code data-trim>
-        import SiteHeader from 'components'
-      </code></pre>
+      <ul>
+        <li>
+          <pre><code data-trim>
+            resolve: {
+              alias: {
+                components: path.resolve(
+                  __dirname, '../components'
+                )
+              }
+            }
+          </code></pre>
+        </li>
+        <li>
+          <pre><code data-trim>
+            import {Button} from 'components'
+          </code></pre>
+          <br>
+          <pre><code data-trim>
+            import {colors, dimensions} from 'components'
+          </code></pre>
+        </li>
+      </ul>
       <p class="fragment fade-up">
         <img class="box big" src="static/error.png">
       </p>
     </section>
     <section data-transition="fade" data-transition-speed="fast">
       <h2>Strategy 3a: pre-built "package" and webpack aliases</h2>
+      <ul>
+        <li>
+          <pre><code data-trim>
+            // webpack.config.js
+            rules: [{
+              test: /.jsx?$/,
+              include: [
+                path.resolve(__dirname, '../components'),
+                path.resolve(__dirname, 'src')
+              ],
+              loader: 'babel-loader'
+            }]
+          </code></pre>
+        </li>
+        <li style="text-align: left">
+          <p>
+            <span class="code">npm init</span> in the shared code directory
+          </p>
+          <p>
+            <span class="code">npm install</span> shared code dependencies
+          </p>
+          <p>
+            install shared code dependencies as part of the app's <span class="code">build</span> job
+          </p>
+        </li>
+      </ul>
+      </code></pre>
     </section>
     <section data-transition="fade" data-transition-speed="fast">
       <h2>Final Notes</h2>
+      <ul>
+        <li style="text-align: left; flex-basis: 100%">Not the only way to go (as the frontend tradition goes)</li>
+        <li style="text-align: left; flex-basis: 100%">Format of shared code is important (depends on the other apps)</li>
+        <li style="text-align: left; flex-basis: 100%">npm package in long term?</li>
+      </ul>
     </section>
   </div>
 
