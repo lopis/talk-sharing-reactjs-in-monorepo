@@ -48,7 +48,7 @@
       <p class="fragment highlight-blue">highlight-blue</p>
     </section> -->
     <section data-transition="fade" data-transition-speed="fast">
-      <h2>Monorepo? What is that? Why would you do that?</h2>
+      <h2>Monorepo? What is that? <br> Why would you do that?</h2>
       <ul>
         <li style="width: 100%">1 repository for all apps</li>
         <li>always sychronized</li>
@@ -176,9 +176,6 @@
                 └─src
                   ├─inputs <--
                   ├─common
-                  ╎  ├─Button
-                  ╎  ├─Panel
-                  ╎  └─...
                   ├─config
                   ├─colors
                   ├─icons
@@ -221,13 +218,13 @@
       <h2>Strategy 2: why not a private npm package?</h2>
       <img class="box big" style="height: 9vw; margin-top: 5vh;" src="static/npm.svg">
       <ul style="margin-top: 2vh;">
-        <li style="width: 100vh">
+        <li class="fragment fade-up" style="width: 100vh">
           Less flexibility
         </li>
-        <li style="width: 100%">
+        <li class="fragment fade-up" style="width: 100%">
           Less development agility
         </li>
-        <li style="width: 100%">
+        <li class="fragment fade-up" style="width: 100%">
           Defeats purpose of monorepo
         </li>
       </ul>
@@ -256,7 +253,10 @@
           </code></pre>
         </li>
       </ul>
-      <p class="fragment fade-up">
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <h2>Strategy 3: webpack aliases</h2>
+      <p>
         <img class="box big" src="static/error.png">
       </p>
     </section>
@@ -276,15 +276,15 @@
             }]
           </code></pre>
         </li>
-        <li style="text-align: left">
-          <p>
-            <span class="code">npm init</span> in the shared code directory
+        <li style="text-align: left; position: relative">
+          <p class="fragment fade-left current-visible" style="position: absolute; top: 0">
+            1. <span class="code">npm init</span> in the shared code directory
           </p>
-          <p>
-            <span class="code">npm install</span> shared code dependencies
+          <p class="fragment fade-left current-visible" style="position: absolute; top: 0">
+            2. <span class="code">npm install</span> shared code dependencies
           </p>
-          <p>
-            install shared code dependencies as part of the app's <span class="code">build</span> job
+          <p class="fragment fade-left current-visible" style="position: absolute; top: 0">
+            3. install shared code dependencies as part of the app's <span class="code">build</span> job
           </p>
         </li>
       </ul>

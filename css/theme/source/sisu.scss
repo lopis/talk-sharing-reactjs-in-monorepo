@@ -32,9 +32,9 @@ $linkColor: #178CD3;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
-$heading1Size: 2.5em;
-$heading2Size: 1.6em;
-$heading3Size: 1.3em;
+$heading1Size: 1.6em;
+$heading2Size: 1.3em;
+$heading3Size: 1.2em;
 $heading4Size: 1.0em;
 
 section.has-dark-background {
@@ -168,6 +168,8 @@ section.has-dark-background {
 	margin: 0 auto;
   code {
     max-height: none;
+		font-size: 0.8em;
+		line-height: 1.1;
   }
 }
 
